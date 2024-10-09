@@ -1,0 +1,27 @@
+@startuml
+ left to right direction
+
+' Définir les acteurs à gauche
+actor Utilisateur
+actor Admin
+actor PP
+actor DD
+
+' Encadrer les actions dans une boîte représentant le système
+package "Système" {
+    usecase "Ajouter un étudiant" as UC1
+    usecase "Modifier un étudiant" as UC2
+    usecase "Supprimer un étudiant" as UC3
+    usecase "Consulter la base de données" as UC4
+}
+
+' Définir les relations entre les acteurs et les cas d'utilisation
+Utilisateur --> UC1
+Utilisateur --> UC4
+PP --> UC3
+DD --> UC2
+Admin --> UC2
+Admin --> UC3
+Admin --> UC4
+
+@enduml
