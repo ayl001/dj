@@ -18,7 +18,10 @@ le cas avec django.
 modifications. 
 C'est bien sûr plus "convivial" qu'avec le shell de 
 django, mais ça doit pouvoir être amélioré avec un 
-formulaire dédié ou en amendant celui d'admin. Pour la suppression l'interface d'admin 
-convient à mon avis, pour une modification à la volée aussi.
+formulaire dédié ou en amendant celui d'admin. Pour la suppression l'interface 
+d'admin convient à mon avis, pour une modification à la volée aussi, mais pas pour de multiples 
+ajouts àmha..
 
-# 3. 
+## 3. Inventaire
+* Tous les attributs sont affichable, mais on ne peut pas filtrer suivant les 
+attributs, ni trier. On ne peut faire de recherche suivant aucun champ. 
