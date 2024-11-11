@@ -25,3 +25,33 @@ ajouts àmha..
 ## 3. Inventaire
 * Tous les attributs sont affichable, mais on ne peut pas filtrer suivant les 
 attributs, ni trier. On ne peut faire de recherche suivant aucun champ. 
+
+## 4.admin.py : `from django.contrib import admin
+
+from .models import Question, Choice
+
+class QuestionAdmin(admin.ModelAdmin):
+    list_display = ['question_text', 'pub_date']
+    list_filter = ['question_text', 'pub_date']
+    ordering = ['pub_date', 'question_text']
+    search_fields = ['question_text', 'pub_date']
+
+
+class ChoiceAdmin(admin.ModelAdmin):
+    list_display = ['question', 'choice_text', 'votes']
+    list_filter = ['question', 'choice_text', 'votes']
+    ordering = ['question', 'choice_text', 'votes']
+    search_fields = ['choice_text']
+
+admin.site.register(Question, QuestionAdmin)
+admin.site.register(Choice, ChoiceAdmin)`
+
+## 5. Administration
+Avec ce réglage, l'utilisateur ne peut pas se connecter. 
+
+## 6. Contrôle d'accès
+Avec le statut d'équipier et en ne lui ajoutant aucun droit supplémentaire, il peut se 
+connecter mais la console d'admin lui indique qu'il ne peut rien consulter et rien modifier.
+
+## 7. Administration
+En faisant passer le compte d'actif à non actif, l'utilisateur ne peut pas se connecter
